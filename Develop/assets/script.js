@@ -1,3 +1,8 @@
+var container = $('.container-lg').children();
+var hour9 = $('#hour-9').children();
+
+console.log(container);
+console.log(hour9);
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -21,3 +26,12 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+
+function saveEvent(event) {
+  var timeSlot = $(event.target).parent().attr('id');
+  // var inputValue = timeSlot;
+  console.log(timeSlot);
+  // localStorage.setItem(timeSlot, )
+}
+// Save button event listener
+$('.fa-save').on('click', saveEvent);
