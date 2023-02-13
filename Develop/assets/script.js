@@ -1,12 +1,12 @@
-var container = $('.container-lg').children();
-var hour9 = $('#hour-9').children();
-
-console.log(container);
-console.log(hour9);
+var slotDivs = $('.container-lg').children();
+console.log(slotDivs);
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+$(slotDivs).each(function () {
+  var key = $(this).attr('id');
+  var value = localStorage.getItem(key);
+  $(this).children('textarea').val(value);
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -27,11 +27,14 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
 });
 
-function saveEvent(event) {
-  var timeSlot = $(event.target).parent().attr('id');
-  // var inputValue = timeSlot;
-  console.log(timeSlot);
-  // localStorage.setItem(timeSlot, )
-}
-// Save button event listener
-$('.fa-save').on('click', saveEvent);
+// Saved event to local storage when user clicks the save button
+$('.fa-save').click(function () {
+  var time = $(this).parent().parent().attr('id');
+  var inputValue = $(this).parent().parent().children('textarea')[0].value;
+  localStorage.setItem(time, inputValue);
+});
+
+function setDateTime() {
+
+};
+
