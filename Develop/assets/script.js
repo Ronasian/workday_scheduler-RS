@@ -22,3 +22,4 @@
     $(this).children('textarea').val(value);
     // Add code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour.
+  });
