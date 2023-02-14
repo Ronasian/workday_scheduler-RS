@@ -1,7 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-
+$(document).ready(function () {
   var slotDivs = $('.container-lg').children();
   var date = $('#currentDay');
   // display the current date in the header of the page.
@@ -37,5 +37,6 @@
       $(this).removeClass('past');
       $(this).removeClass('present');
       $(this).addClass('future');
-    }
+    };
   });
+});
