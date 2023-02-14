@@ -36,10 +36,7 @@ THEN the saved events persist
 
 ```
 ### Images:
-![greeting](./assets/images/quiz-greeting.jpg)
-![question](./assets/images/quiz-question.jpg)
-![submission](./assets/images/quiz-submission.jpg)
-![scoreboard](./assets/images/quiz-scoreboard.jpg)
+![deployed-app](./Develop/assets/images/deployed-app.jpg)
 
 ## License
 
