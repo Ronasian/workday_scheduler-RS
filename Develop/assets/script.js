@@ -4,9 +4,9 @@
 $(document).ready(function () {
   var slotDivs = $('.container-lg').children();
   var date = $('#currentDay');
-  // display the current date in the header of the page.
+  // displays the current date in the header of the page.
   date.text(dayjs().format('dddd, MMMM D, YYYY'));
-  // Add a listener for click events on the save button. This code should
+  // Listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage.
   $('.fa-save').click(function () {
@@ -14,7 +14,7 @@ $(document).ready(function () {
     var inputValue = $(this).parent().siblings('textarea')[0].value;
     localStorage.setItem(time, inputValue);
   });
-  // Add code to get any user input that was saved in localStorage and set
+  // Gets any user input that was saved in localStorage and sets
   // the values of the corresponding textarea elements.
   $(slotDivs).each(function () {
     var key = $(this).attr('id');
@@ -23,6 +23,7 @@ $(document).ready(function () {
     // Add code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour.
     var currentHour = dayjs().hour();
+    // variable for just the number in "key"
     var slotHour = key.split('-')[1];
     var testHour = 13;
     // checks if slot is past
