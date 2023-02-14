@@ -22,4 +22,20 @@
     $(this).children('textarea').val(value);
     // Add code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour.
+    var currentHour = dayjs().hour();
+    var slotHour = key.split('-')[1];
+    var testHour = 13;
+    // checks if slot is past
+    if (slotHour < currentHour) {
+      $(this).addClass('past');
+    // checks if slot is present (slotHour: integer / currentHour: string)
+    } else if (slotHour == currentHour) {
+      $(this).removeClass('future');
+      $(this).addClass('present');
+    } else {
+    // checks if slot is future
+      $(this).removeClass('past');
+      $(this).removeClass('present');
+      $(this).addClass('future');
+    }
   });
